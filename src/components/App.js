@@ -5,7 +5,7 @@ import Footer from './Footer';
 import ShoppingList from './ShoppingList';
 
 function App() {
-  const [cart, setCart] = useState(0);
+  const [cart, setCart] = useState([]);
 
   return (
     <React.Fragment>
