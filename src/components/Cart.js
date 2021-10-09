@@ -13,8 +13,8 @@ const Cart = ({cart, setCart}) => {
 	)
 
     useEffect(() => {
-        alert('Le montant total du panier est de ' + total);
-    })
+        document.title = `LMJ - total : ${total}€`;
+    }, [total])
 
     return isCartOpen ? (
         <div className="lmj-cart">
