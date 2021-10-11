@@ -3,9 +3,6 @@ import "../styles/Cart.css"
 const Cart = ({cart, setCart}) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
 
-    //const monsteraPrice = 8
-    // const ivyPrice = 10
-    // const flowerPrice = 15
     const items = Object.keys(cart)
 	const total = items.reduce(
 		(acc, item) => acc + cart[item].amount * cart[item].price,
