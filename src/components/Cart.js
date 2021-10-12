@@ -9,6 +9,11 @@ const Cart = ({cart, setCart}) => {
 		0
 	)
 
+    const removeFromCart = (plantName) => {
+        const filteredCart = cart.filter(plant => plant.name !== plantName );
+        setCart([...filteredCart]);
+    }
+
     useEffect(() => {
         document.title = `LMJ - total : ${total}€`;
     }, [total])
@@ -16,14 +21,15 @@ const Cart = ({cart, setCart}) => {
     return isCartOpen ? (
         <div className="lmj-cart">
             <div className='btn-container'>
-                <button className='lmj-cart-empty-btn' onClick={() => setCart([])}>Vider le panier</button>
-                <button className='lmj-cart-toggle-btn' onClick={() => setIsCartOpen(false)}>✖</button>
+                <button className='lmj-cart-btn lmj-cart-empty-btn' onClick={() => setCart([])}>Vider le panier</button>
+                <button className='lmj-cart-btn lmj-cart-toggle-btn' onClick={() => setIsCartOpen(false)}>✖</button>
             </div>
             <h2>Panier</h2>
-            <ul>
+            <ul className="cart-list">
                 {cart.map(({ name, price, amount }, index) => (
-                    <div key={`${name}-${index}`}>
+                    <div key={`${name}-${index}`} className="cart-item">
                         {name} {price}€ x {amount}
+                        <button className="lmj-cart-btn lmj-cart-suppr-btn" onClick={() => removeFromCart(name)}>Retirer</button>
                     </div>
                 ))}
             </ul>

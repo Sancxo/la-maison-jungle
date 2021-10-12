@@ -8,14 +8,22 @@
 	width: 300px;
 	text-transform: capitalize;
 }
+.cart-list {
+	padding: 0;
+}
+.cart-item { 
+	display: flex; 
+	justify-content: space-between;
+}
 
 .btn-container {
     display: flex;
     justify-content: flex-end;
 }
 .lmj-cart-empty-btn { margin-right: 1em; }
-.lmj-cart-empty-btn:hover { text-decoration: underline; }
-.lmj-cart-toggle-btn, .lmj-cart-empty-btn {
+.lmj-cart-empty-btn:hover, .lmj-cart-suppr-btn:hover { text-decoration: underline; }
+.lmj-cart-suppr-btn {font-size: small; margin-left: 0.5em;}
+.lmj-cart-btn {
 	background: none;
 	outline: none;
 	border: none;
