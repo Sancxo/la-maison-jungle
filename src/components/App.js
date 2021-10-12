@@ -3,6 +3,7 @@ import Banner from './Banner';
 import Cart from './Cart';
 import Footer from './Footer';
 import ShoppingList from './ShoppingList';
+import '../styles/App.css'
 
 function App() {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import "../styles/Cart.css"
 const Cart = ({cart, setCart}) => {
-    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(true);
 
     const items = Object.keys(cart)
 	const total = items.reduce(
@@ -15,8 +15,10 @@ const Cart = ({cart, setCart}) => {
 
     return isCartOpen ? (
         <div className="lmj-cart">
-            <button onClick={() => setCart([])}>Vider le panier</button>
-            <button className='lmj-cart-toggle-button' onClick={() => setIsCartOpen(false)}>✖</button>
+            <div className='btn-container'>
+                <button className='lmj-cart-empty-btn' onClick={() => setCart([])}>Vider le panier</button>
+                <button className='lmj-cart-toggle-btn' onClick={() => setIsCartOpen(false)}>✖</button>
+            </div>
             <h2>Panier</h2>
             <ul>
                 {cart.map(({ name, price, amount }, index) => (
@@ -29,7 +31,7 @@ const Cart = ({cart, setCart}) => {
         </div>
     ) : (
         <div className="lmj-cart-closed" style={{background: 'white'}}>
-            <button className='lmj-cart-toggle-button' onClick={() => setIsCartOpen(true)}>🛒</button>
+            <button className='lmj-cart-toggle-btn' onClick={() => setIsCartOpen(true)}>🛒</button>
         </div>
     )
 }

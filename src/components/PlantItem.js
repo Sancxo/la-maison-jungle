@@ -1,13 +1,14 @@
 import "../styles/PlantItem.css"
 import CareScale from "./CareScale";
 
-const PlantItem = ({name, cover, light, water}) => {
-    const handleClick = (plantName) => {
-        alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix 🌱✨`)
+const PlantItem = ({name, cover, light, water, price}) => {
+    const handleClick = (plantName, price) => {
+        alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix 🌱✨ Elle coûte ${price}€`)
     }
 
     return (
-        <div className='lmj-plant-item' onClick={() => handleClick(name)}>
+        <div className='lmj-plant-item' onClick={() => handleClick(name, price)}>
+            <span className='lmj-plant-item-price'>{price}€</span>
             <img src={cover} alt={`${name}`} className="lmj-plant-item-cover"/>
             <p>{name}</p>
             <CareScale careType="water" scaleValue={water} />
