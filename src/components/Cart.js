@@ -36,7 +36,7 @@ const Cart = ({cart, setCart}) => {
             Total : { total }€
         </div>
     ) : (
-        <div className="lmj-cart-closed" style={{background: 'white'}}>
+        <div className="lmj-cart-closed">
             <button className='lmj-cart-toggle-btn' onClick={() => setIsCartOpen(true)}>🛒</button>
         </div>
     )

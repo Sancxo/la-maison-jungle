@@ -3,6 +3,7 @@
 	flex-direction: row;
 }
 
-.dark-mode { background-color: #161616; }
+/* Dark mode selectors */
+.dark-mode, .dark-mode .lmj-cart-closed { background-color: #161616; }
 .dark-mode, .dark-mode header, .dark-mode footer { color: ghostwhite; }
 .dark-mode .lmj-cart, .dark-mode .lmj-cart button { color: #161616 }

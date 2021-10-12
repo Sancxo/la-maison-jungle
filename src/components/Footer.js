@@ -8,7 +8,8 @@ const Footer = () => {
         setEmail(e.target.value);
     }
     const checkEmail = () => {
-        email.includes("@") || alert("Votre email n'est pas au bon format !");
+        email &&
+        (email.includes("@") || alert("Votre email n'est pas au bon format !"));
     }
     
     return(
@@ -19,15 +20,11 @@ const Footer = () => {
 			<div className='lmj-footer-elem'>Laissez-nous votre mail :</div>
 			<input
                 type='email'
-				placeholder='Entrez votre mail'
 				onChange={handleChange}
-				value={email}
+				placeholder={email}
 				onBlur={checkEmail}
 			/>
 		</footer>
-        // <form>
-        //     <input type="email" onChange={handleChange} onBlur={checkEmail}></input>
-        // </form>
     )
 }
 
